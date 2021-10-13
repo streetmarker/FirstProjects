@@ -53,7 +53,7 @@ class Customer:
                 print("Transfer")
                 print("Enter card number:")
                 chosen_card = str(input())
-                if chosen_card not in self.customers:# mayby sql querry
+                if chosen_card not in self.customers:
                     print("Such a card does not exist.")
                     break
                 if not luhn_algo(self, chosen_card):
@@ -68,15 +68,7 @@ class Customer:
                     cur.execute("""UPDATE card
                     SET balance =+ (?)
                     WHERE NUMBER = (?)""", (int(money_transfer), chosen_card))
-                    #cur.execute("""SELECT balance,
-                    #IF(balance >= (?),
-                    #UPDATE card
-                    #SET balance = balance + (?)
-                    #WHERE number = (?),
-                    #"Not enough money!")
-                    #FROM card
-                    #WHERE number = (?)""",
-                    #(int(money_transfer), , , str(card)))
+
 
                     conn.commit()
             if choice == 4:
@@ -94,51 +86,30 @@ class Customer:
         actualcard = list(card)
         lastdig = actualcard[-1]
         cardList = list(card)
-        #print(cardList)  # test
-        holdLastdig0 = "0"
-        holdLastdig = str(cardList[-1])  # temp num for checksum
+
         sum = 0  # sum of numbers
 
         cardList[-1] = "0"  # checksum
 
-        #print(sum)
         for x in range(len(cardList)):
             if x % 2 == 0:
                 cardList[x] = str(int(cardList[x]) * 2)
-        #print(cardList)  # test
-        #print(sum)  # test
+
         for x in range(len(cardList)):
             if int(cardList[x]) > 9:
                 cardList[x] = str(int(cardList[x]) - 9)
-        #print(cardList)  # test
-        #print(sum)  # test
-        # check sum for algorithm
-        # cardList[0] = "0"
         cardList[-1] = lastdig
 
         for x in range(15):
             sum += int(cardList[x])
-            #print(sum)
+
         for y in range(0, 10):
             sum += int(y)
             if sum % 10 == 0:
                 cardList[-1] = str(y)
-                # lastdig = str(y)
                 actualcard[-1] = str(y)
-                #print(actualcard)
                 break
             sum -= int(y)
-
-            # for x in range(len(cardList)):
-            # cardList[-1] = holdLastdig0
-            #print(cardList)
-
-            # check if card matches the algorithm
-
-        #print(cardList)  # test
-        #print(sum)  # test
-        # cardList[0] = "4"
-        # card = magic(self, cardList)
 
         card = magic(self, actualcard)
         return card
@@ -162,7 +133,7 @@ class Customer:
                 conn.commit()
 
             if (num == 2):
-                #print(self.customers)
+
                 print("Enter your card number:")
                 get_num = int(input())
                 print("Enter your PIN:")
