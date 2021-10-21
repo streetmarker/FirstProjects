@@ -1,5 +1,3 @@
-package cinema;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -7,8 +5,7 @@ import java.util.Scanner;
 public class Cinema {
     int ticketCounter = 0;
     public static void main(String[] args) {
-        //obj
-        //rown ticketCounter = new rown();
+
         rown moneyCounter = new rown();
         Cinema tc = new Cinema();
         Scanner scan = new Scanner(System.in);
@@ -23,8 +20,6 @@ public class Cinema {
         //
         ArrayList<Integer> allTickets = new ArrayList<Integer>();
         Integer nic = new Integer(1);
-        ArrayList zajeteMiejscaR = new ArrayList();
-        ArrayList zajeteMiejscaS = new ArrayList();
 
         System.out.println("Enter the number of rows:");
         int rows = scan.nextInt();
@@ -33,8 +28,7 @@ public class Cinema {
         int income = 0;
         float percentage = rows * seats;
         int cIncome = 0;
-        /*
-*/
+
 //        menu
         for (int k = 0; k < 100; k++) {
             System.out.println();
@@ -50,17 +44,6 @@ public class Cinema {
             if (choice == 1) {
                 //sala z wyznaczonymi siedzeniami
 
-                /*System.out.println();
-                System.out.println("Enter a row number:");
-                rows2 = scan.nextInt();
-                System.out.println("Enter a seat number in that row:");
-                seats2 = scan.nextInt();
-                if (rows/2>=rows2)income=10;
-                System.out.println();
-                System.out.print("Ticket price: ");
-                System.out.println("$" + income);
-                System.out.println();
-                */
                 System.out.println("Cinema:");
                 for (int i = 0; i <= rows; i++) {
                     for (int j = 0; j <= seats; j++) {
@@ -110,8 +93,8 @@ public class Cinema {
                     seats2 = scan.nextInt();
                     if (seats2 > seats) System.out.println("Wrong input!");
                     else {
-                        if(//rows2collect.contains(rows2) && seats2collect.contains(seats2)
-                           collectChoice2Number.contains((double) rows2+(double) seats2/10)) {
+                        if(
+                                collectChoice2Number.contains((double) rows2+(double) seats2/10)) {
                             System.out.println("That ticket has already been purchased!");
                             //powtorka
                             System.out.println();
@@ -126,8 +109,7 @@ public class Cinema {
                                 else {
 
 
-                                    //if (rows2collect.contains(rows2)==false || seats2collect.contains(seats2)==false) {
-                                    //ticketCounter++;
+
                                     allTickets.add(nic);
                                     if (rows * seats <= 60) {
                                         income = 10;
@@ -153,7 +135,7 @@ public class Cinema {
                             }
                         }
 
-                       else {
+                        else {
 
                             allTickets.add(rows2);
                             if (rows * seats <= 60) {
@@ -162,7 +144,7 @@ public class Cinema {
                                 int front = rows / 2;
                                 int back = rows - front;
                                 if(rows2>front)
-                                income = 8;
+                                    income = 8;
                                 else income = 10;
                             }
                             cIncome += income;
@@ -179,8 +161,8 @@ public class Cinema {
                             moneyCounter.ticketCount();
                             collectChoice2Number.add((double) rows2+(double) seats2/10);
                         }
-                            }
-                        }
+                    }
+                }
 
             }
             if (choice == 3) {
@@ -190,7 +172,6 @@ public class Cinema {
                 System.out.printf("Percentage:  %.2f",printPercentage);
                 System.out.print("%");
                 System.out.println();
-                //((tc.ticketCounter%.3f / percentage%.3f) * 100)%.3f
                 System.out.println("Current income: $" + moneyCounter.totalMoney);
                 rown wynik = new rown();
                 System.out.println("Total income: $" +wynik.totalIncome(rows,seats));
@@ -200,7 +181,6 @@ public class Cinema {
             }
 
         }
-        //System.out.println(tc.ticketCounter);
     }
     public static class rown {
         public int tickets;
