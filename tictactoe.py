@@ -5,6 +5,12 @@ def prt(x, y):
     print("|" + " " + board[1][0] + " " + board[1][1] + " " + board[1][2] + " " + "|")
     print("|" + " " + board[2][0] + " " + board[2][1] + " " + board[2][2] + " " + "|")
     print("---------")
+def xWin():
+    print("X wins")
+    exit()
+def oWin():
+    print("O wins")
+    exit()
 
 # Game State print
 board = [[" ", " ", " "],
@@ -21,10 +27,16 @@ print("---------")
 count = 0
 flag = 3
 xCzyY = 1
+print("Order of input:# #")
 for _ in range(9):
-
     count += 1
-    move = input("Enter the coordinates: ")
+    try:
+        # code with possible error
+        move = input("Enter the coordinates: ")
+    except:
+        print("Wrong input type (# #)")
+        move = input("Enter the coordinates: ")
+
     a = int(move[0])
     b = int(move[2])
     for i in range(100):
@@ -51,43 +63,38 @@ for _ in range(9):
             a = int(move[0])
             b = int(move[2])
 
-#Loop print
-xwin = False
-owin = False
-draw = False
-for i in range(3):
-    if board[i] == ["X,X,X"]:
-        xwin = True
-    for j in range(3):
-        for ji in range(3):
-            if board[j][ji] == ["X,X,X"]:
-                xwin = True
 
-for i in range(3):
-    if board[i] == ["O,O,O"]:
-        owin = True
-    for j in range(3):
-        for ji in range(3):
-            if board[j][ji] == ["O,O,O"]:
-                owin = True
+    for i in range(3):
+        if board[i] == ["X","X","X"]:
+            xWin()
 
-if board[2][0] == "X" and board[1][1] == "X" and board[0][2] == "X":
-    xwin = True
-elif board[0][0] == "X" and board[1][1] == "X" and board[2][2] == "X":
-    xwin = True
 
-if board[2][0] == "O" and board[1][1] == "O" and board[0][2] == "O":
-    owin = True
-elif board[0][0] == "O" and board[1][1] == "O" and board[2][2] == "O":
-    owin = True
+        for j in range(3):
+            for ji in range(3):
+                if board[j][ji] == ["X","X","X"]:
+                    xWin()
 
-if xwin == False and owin == False:
-    draw = True
 
-if xwin == True:
-    print("X wins")
-elif owin == True:
-    print("O wins")
-elif draw == True:
-    print("Draw")
 
+    for i in range(3):
+        if board[i] == ["O","O","O"]:
+            oWin()
+
+
+        for j in range(3):
+            for ji in range(3):
+                if board[j][ji] == ["O","O","O"]:
+                    oWin()
+
+
+
+    if board[2][0] == "X" and board[1][1] == "X" and board[0][2] == "X":
+        xWin()
+
+    elif board[0][0] == "X" and board[1][1] == "X" and board[2][2] == "X":
+        xWin()
+
+    if board[2][0] == "O" and board[1][1] == "O" and board[0][2] == "O":
+        oWin()
+    elif board[0][0] == "O" and board[1][1] == "O" and board[2][2] == "O":
+        oWin()
