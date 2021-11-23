@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="css\style.css">	
+        <script src="js\skrypty.js"></script>         
+    </head>
+    <body onload="startKalkulator()">
+        <header id="page_header">
+			<h1>Kalkulator z pamięcią i wyborem działań</h1>			
+			<h5>kalkulator pamięć i wybór</h5>	
+        </header>
+        <section id="kalkulator">
+            <h3>Calculator</h3>
+            <input type="number" id="liczba1">
+            <span id="kalkulatorSelect">
+                <select id="selectOperator" ></select>
+            </span>            
+            <input type="number" id="liczba2">
+            <button onclick = "oblicz()">=</button>
+            <input type="number" id="wynik" readonly>
+            <br><label id="error"></label><br>
+            <button onclick="doOperatorow()">change operator</button>
+            <button onclick="doHistorii()">History</button>            
+        </section>
+        <section id="operatory">
+            <h3>Dodaj usuń operator</h3>
+            <span id="usunSelect"></span>            
+            <button onclick="usunOperator()">Remove operator</button>
+            <br>
+            <label>Dodaj operator:</label>
+            <select id="selectAddOperator" ></select>
+            <button onclick="dodajOperator()">Add operator</button>
+            <br><br>
+            <button onclick="doKalkulatora()">wróć do kalkulatora</button>
+            <button onclick="doHistorii()">History</button>            
+        </section>
+        <section id="memory">
+            <table id="memoryObliczenia"></table>
+            <br><br>
+            <button onclick="doKalkulatora()">Back to calculator</button>
+            <button onclick="doOperatorow()">change operator</button>
+        </section>
+        <footer id="page_footer">
+            <br>footer
+        </footer>        
+        
+    </body>
+</html>
