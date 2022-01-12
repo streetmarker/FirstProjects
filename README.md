@@ -1,6 +1,6 @@
 # Portfolio
 
-Programy w portfolio:
+Programy:
 ### 1. Cinema room manager - Program w języku Java do zarządzania rezerwacją miejsc sali kinowej.
 ### 2. Banking app - napisana w Pythonie aplikacja do tworzenia i zarządzania kontami bankowymi i składownie danych w bazie SQLite.
 ### 3. Tictactoe
