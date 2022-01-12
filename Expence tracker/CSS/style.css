@@ -1,0 +1,46 @@
+body{
+	margin: 15px auto;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-style: oblique;
+	font-size: 20px;
+	width: 600px;
+	text-align: center;
+	background: radial-gradient(rgb(175, 175, 175rgb(204, 203, 203)68));
+}
+header{
+	padding: 20px;
+	text-decoration-style: dashed;
+	font-size: 40px;
+	font-style: normal;
+}
+input{
+	border-color: greenyellow;
+}
+td, table, th{
+	border-collapse: collapse;
+	margin:2px;
+	padding:2px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: aqua;
+	width: 500px;
+}
+td{
+	border:1px solid;
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+}
+div{
+	padding: 20px;
+}
+#add{
+	font-stretch: wider;
+}
+.flexContainer {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
