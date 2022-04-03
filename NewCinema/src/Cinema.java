@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -51,28 +52,38 @@ public class Cinema {
                             System.out.print("  ");
                         } else if (j == 0) {
                             System.out.print(i + " ");
+//                            TO DO spaces--
                         } else if (i == 0) {
                             System.out.print(j + " ");
                         } else if (rows2collect.size() > 0 && i == (int) rows2collect.get(0) && j == (int) seats2collect.get(0)) {
-                            System.out.print("B ");
+                            System.out.print("+ ");
                         } else if (rows2collect.size() > 1 && i == (int) rows2collect.get(1) && j == (int) seats2collect.get(1)) {
-                            System.out.print("B ");
+                            System.out.print("+ ");
                         } else if (rows2collect.size() > 2 && i == (int) rows2collect.get(2) && j == (int) seats2collect.get(2)) {
-                            System.out.print("B ");
+                            System.out.print("+ ");
                         } else if (rows2collect.size() > 3 && i == (int) rows2collect.get(3) && j == (int) seats2collect.get(3)) {
-                            System.out.print("B ");
+                            System.out.print("+ ");
                         } else if (rows2collect.size() > 4 && i == (int) rows2collect.get(4) && j == (int) seats2collect.get(4)) {
-                            System.out.print("B ");
+                            System.out.print("+ ");
                         } else if (rows2collect.size() > 5 && i == (int) rows2collect.get(5) && j == (int) seats2collect.get(5)) {
-                            System.out.print("B ");
+                            System.out.print("+ ");
                         }else if (rows2collect.size() > 6 && i == (int) rows2collect.get(6) && j == (int) seats2collect.get(6)) {
-                            System.out.print("B ");
+                            System.out.print("+ ");
                         }else if (rows2collect.size() > 7 && i == (int) rows2collect.get(7) && j == (int) seats2collect.get(7)) {
-                            System.out.print("B ");
+                            System.out.print("+ ");
                         }else if (rows2collect.size() > 8 && i == (int) rows2collect.get(8) && j == (int) seats2collect.get(8)) {
-                            System.out.print("B ");
-                        } else {
-                            System.out.print("S ");
+                            System.out.print("+ ");
+                        }else if(j >= 100) {
+                            System.out.print(String.join("", Collections.nCopies((Integer.toString(j).length()-2), " ")) );
+                            System.out.print("-");
+                            System.out.print(String.join("", Collections.nCopies((Integer.toString(j).length()-1), " ")) );
+                        }else if(j >= 10) {
+                            System.out.print(String.join("", Collections.nCopies((Integer.toString(j).length()-1), " ")) );
+                            System.out.print("-");
+                            System.out.print(String.join("", Collections.nCopies((Integer.toString(j).length()-1), " ")) );
+                        }else{
+
+                            System.out.print("- ");
                         }
                     }
                     System.out.println();
@@ -174,7 +185,7 @@ public class Cinema {
                 System.out.println();
                 System.out.println("Current income: $" + moneyCounter.totalMoney);
                 rown wynik = new rown();
-                System.out.println("Total income: $" +wynik.totalIncome(rows,seats));
+                System.out.println("Possible income: $" + wynik.totalIncome(rows,seats));
             }
             if (choice == 0) {
                 return;
